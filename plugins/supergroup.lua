@@ -20,7 +20,7 @@ local function check_member_super(cb_extra, success, result)
           set_name = string.gsub(msg.to.title, '_', ' '),
 		  lock_arabic = 'no',
 		  lock_english = 'no',
-		  lock_link = "yes",
+		  lock_links = "yes",
           flood = 'yes',
 		  lock_spam = 'yes',
 		  lock_media = 'no',
@@ -208,11 +208,11 @@ local function lock_group_links(msg, data, target)
   if not is_momod(msg) then
     return
   end
-  local group_link_lock = data[tostring(target)]['settings']['lock_link']
-  if group_link_lock == 'yes' then
+  local group_links_lock = data[tostring(target)]['settings']['lock_links']
+  if group_links_lock == 'yes' then
     return '🔐 Link Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
-    data[tostring(target)]['settings']['lock_link'] = 'yes'
+    data[tostring(target)]['settings']['lock_links'] = 'yes'
     save_data(_config.moderation.data, data)
     return '🔐 Link Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   end
@@ -222,11 +222,11 @@ local function unlock_group_links(msg, data, target)
   if not is_momod(msg) then
     return
   end
-  local group_link_lock = data[tostring(target)]['settings']['lock_link']
-  if group_link_lock == 'no' then
+  local group_links_lock = data[tostring(target)]['settings']['lock_links']
+  if group_links_lock == 'no' then
     return '🔓 Link Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
-    data[tostring(target)]['settings']['lock_link'] = 'no'
+    data[tostring(target)]['settings']['lock_links'] = 'no'
     save_data(_config.moderation.data, data)
     return '🔓 Link Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   end
@@ -1340,8 +1340,18 @@ end
 			data[tostring(target)]['settings']['lock_member'] = 'no'
 		end
 	end
+    	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_links'] then
+			data[tostring(target)]['settings']['lock_links'] = 'no'
+		end
+	end
+    	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_arabic'] then
+			data[tostring(target)]['settings']['lock_arabic'] = 'no'
+		end
+	end
   local settings = data[tostring(target)]['settings']
-   local text = "SuperGroup Settings For ["..msg.to.print_name.."]:\n\n[🔐] Default locks :\nLock Links 👉 "..settings.lock_link.."\nLock Flood 👉 "..settings.flood.."\nLock Spam 👉 "..settings.lock_spam.."\nLock Arabic/Persian 👉 "..settings.lock_arabic.."\nLock English 👉 "..settings.lock_english.."\nLock Member 👉 "..settings.lock_member.."\nLock RTL 👉 "..settings.lock_rtl.."\nLock Tgservice  👉 "..settings.lock_tgservice.."\nLock Sticker 👉 "..settings.lock_sticker.."\n\n[🔏] New Locks :\nLock Forward 👉 "..settings.lock_fwd.."\nLock Reply 👉 "..settings.lock_reply.."\nLock Bots 👉 "..settings.lock_bots.."\nLock Share 👉 "..settings.lock_share.."\nLock Tag 👉 "..settings.lock_tag.."\nLock Username 👉 "..settings.username.."\nLock Number 👉 "..settings.lock_number.."\nLock Emoji 👉 "..settings.lock_emoji.."\nLock Poker 👉 "..settings.lock_poker.."\nLock Media 👉 "..settings.lock_media.."\nLock Documents 👉 "..settings.lock_documents.."\nLock Audio 👉 "..settings.lock_audio.."\nLock Photo 👉 "..settings.lock_photo.."\nLock Video 👉 "..settings.lock_video.."\nLock Gifs 👉 "..settings.lock_gifs.."\nLock Inline 👉 "..settings.lock_inline.."\nLock Cmd 👉 "..settings.lock_cmd.."\nLock Text 👉 "..settings.lock_text.."\nLock Badwords 👉 "..settings.lock_badwords.."\nLock All 👉 "..settings.lock_all.."\n\n[🔧] OTHER:\n[👥] Public 👉 "..settings.public.."\n[📛] Strict Settings 👉 "..settings.strict.."\n[👀]Flood Sensitivity 👉 "..NUM_MSG_MAX.."|20"
+   local text = "SuperGroup Settings For ["..msg.to.print_name.."]:\n\n[🔐] Default locks :\nLock Links 👉 "..settings.lock_links.."\nLock Flood 👉 "..settings.flood.."\nLock Spam 👉 "..settings.lock_spam.."\nLock Arabic/Persian 👉 "..settings.lock_arabic.."\nLock English 👉 "..settings.lock_english.."\nLock Member 👉 "..settings.lock_member.."\nLock RTL 👉 "..settings.lock_rtl.."\nLock Tgservice  👉 "..settings.lock_tgservice.."\nLock Sticker 👉 "..settings.lock_sticker.."\n\n[🔏] New Locks :\nLock Forward 👉 "..settings.lock_fwd.."\nLock Reply 👉 "..settings.lock_reply.."\nLock Bots 👉 "..settings.lock_bots.."\nLock Share 👉 "..settings.lock_share.."\nLock Tag 👉 "..settings.lock_tag.."\nLock Username 👉 "..settings.username.."\nLock Number 👉 "..settings.lock_number.."\nLock Emoji 👉 "..settings.lock_emoji.."\nLock Poker 👉 "..settings.lock_poker.."\nLock Media 👉 "..settings.lock_media.."\nLock Documents 👉 "..settings.lock_documents.."\nLock Audio 👉 "..settings.lock_audio.."\nLock Photo 👉 "..settings.lock_photo.."\nLock Video 👉 "..settings.lock_video.."\nLock Gifs 👉 "..settings.lock_gifs.."\nLock Inline 👉 "..settings.lock_inline.."\nLock Cmd 👉 "..settings.lock_cmd.."\nLock Text 👉 "..settings.lock_text.."\nLock Badwords 👉 "..settings.lock_badwords.."\nLock All 👉 "..settings.lock_all.."\n\n[🔧] OTHER:\n[👥] Public 👉 "..settings.public.."\n[📛] Strict Settings 👉 "..settings.strict.."\n[👀]Flood Sensitivity 👉 "..NUM_MSG_MAX.."|20"
   return text
 end
 
@@ -1379,8 +1389,18 @@ end
 			data[tostring(target)]['settings']['lock_member'] = 'no'
 		end
 	end
+        	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_arabic'] then
+			data[tostring(target)]['settings']['lock_arabic'] = 'no'
+		end
+	end
+        	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_links'] then
+			data[tostring(target)]['settings']['lock_links'] = 'no'
+		end
+	end
   local settings = data[tostring(target)]['settings']
- local text = "SuperGroup Settings For ["..msg.to.print_name.."]:\n\n[🔐] Default locks :\nLock Links 👉 "..settings.lock_link.."\nLock Flood 👉 "..settings.flood.."\nLock Spam 👉 "..settings.lock_spam.."\nLock Arabic/Persian 👉 "..settings.lock_arabic.."\nLock English 👉 "..settings.lock_english.."\nLock Member 👉 "..settings.lock_member.."\nLock RTL 👉 "..settings.lock_rtl.."\nLock Tgservice  👉 "..settings.lock_tgservice.."\nLock Sticker 👉 "..settings.lock_sticker.."\n\n[🔏] New Locks :\nLock Forward 👉 "..settings.lock_fwd.."\nLock Reply 👉 "..settings.lock_reply.."\nLock Bots 👉 "..settings.lock_bots.."\nLock Share 👉 "..settings.lock_share.."\nLock Tag 👉 "..settings.lock_tag.."\nLock Username 👉 "..settings.username.."\nLock Number 👉 "..settings.lock_number.."\nLock Emoji 👉 "..settings.lock_emoji.."\nLock Poker 👉 "..settings.lock_poker.."\nLock Media 👉 "..settings.lock_media.."\nLock Documents 👉 "..settings.lock_documents.."\nLock Audio 👉 "..settings.lock_audio.."\nLock Photo 👉 "..settings.lock_photo.."\nLock Video 👉 "..settings.lock_video.."\nLock Gifs 👉 "..settings.lock_gifs.."\nLock Inline 👉 "..settings.lock_inline.."\nLock Cmd 👉 "..settings.lock_cmd.."\nLock Text 👉 "..settings.lock_text.."\nLock Badwords 👉 "..settings.lock_badwords.."\nLock All 👉 "..settings.lock_all.."\n\n[🔧] OTHER:\n[👥] Public 👉 "..settings.public.."\n[📛] Strict Settings 👉 "..settings.strict.."\n[👀]Flood Sensitivity 👉 "..NUM_MSG_MAX.."|20\n\n[👥] About SuperGroup :\nName: "..msg.to.print_name.."\nID: "..msg.to.id.."\n\n[😶] "..muted_user_list(msg.to.id)
+ local text = "SuperGroup Settings For ["..msg.to.print_name.."]:\n\n[🔐] Default locks :\nLock Links 👉 "..settings.lock_links.."\nLock Flood 👉 "..settings.flood.."\nLock Spam 👉 "..settings.lock_spam.."\nLock Arabic/Persian 👉 "..settings.lock_arabic.."\nLock English 👉 "..settings.lock_english.."\nLock Member 👉 "..settings.lock_member.."\nLock RTL 👉 "..settings.lock_rtl.."\nLock Tgservice  👉 "..settings.lock_tgservice.."\nLock Sticker 👉 "..settings.lock_sticker.."\n\n[🔏] New Locks :\nLock Forward 👉 "..settings.lock_fwd.."\nLock Reply 👉 "..settings.lock_reply.."\nLock Bots 👉 "..settings.lock_bots.."\nLock Share 👉 "..settings.lock_share.."\nLock Tag 👉 "..settings.lock_tag.."\nLock Username 👉 "..settings.username.."\nLock Number 👉 "..settings.lock_number.."\nLock Emoji 👉 "..settings.lock_emoji.."\nLock Poker 👉 "..settings.lock_poker.."\nLock Media 👉 "..settings.lock_media.."\nLock Documents 👉 "..settings.lock_documents.."\nLock Audio 👉 "..settings.lock_audio.."\nLock Photo 👉 "..settings.lock_photo.."\nLock Video 👉 "..settings.lock_video.."\nLock Gifs 👉 "..settings.lock_gifs.."\nLock Inline 👉 "..settings.lock_inline.."\nLock Cmd 👉 "..settings.lock_cmd.."\nLock Text 👉 "..settings.lock_text.."\nLock Badwords 👉 "..settings.lock_badwords.."\nLock All 👉 "..settings.lock_all.."\n\n[🔧] OTHER:\n[👥] Public 👉 "..settings.public.."\n[📛] Strict Settings 👉 "..settings.strict.."\n[👀]Flood Sensitivity 👉 "..NUM_MSG_MAX.."|20\n\n[👥] About SuperGroup :\nName: "..msg.to.print_name.."\nID: "..msg.to.id.."\n\n[😶] "..muted_user_list(msg.to.id)
  return text
 end
 
