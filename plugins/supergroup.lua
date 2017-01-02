@@ -34,7 +34,7 @@ local function check_member_super(cb_extra, success, result)
 		  lock_emoji = 'no',
 		  lock_poker = 'no',
 		  lock_audio = 'no',
-		  lock_badwords = 'no'
+		  lock_badwords = 'no',
 		  lock_photo = 'no',
 		  lock_video = 'no',
 		  lock_documents = 'no',
