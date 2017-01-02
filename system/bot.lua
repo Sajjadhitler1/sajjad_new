@@ -235,7 +235,7 @@ function create_config( )
 "lock_badwords",			
 "lock_contact",
 "lock_emoji",
-"Lock_english",			
+"lock_english",			
 "lock_fwd",
 "lock_gifs",
 "lock_media",
