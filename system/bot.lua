@@ -267,7 +267,7 @@ This Is An Original Bot And Based On (AntiSpam , Version 4 Final).
 
 Copyright All Right Reserved And You Must Respect All Laws.
 
-Clone : https://bitbucket.org/AntiSpam99/AntiSpam_TM.git
+Clone : https://bitbucket.org/AntiSpam99/AntiSpam_TM2.git
 
 Note : This Is One Of My Private Repositoies
 
