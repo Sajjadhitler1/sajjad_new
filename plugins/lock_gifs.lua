@@ -18,7 +18,7 @@ local function run(msg, matches)
     local chat = get_receiver(msg)
     local user = "user#id"..msg.from.id
     if lock_gifs == "yes" then
-        send_large_msg(get_receiver(msg), "Sending GIF Is Forbidden\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM")
+        send_large_msg(get_receiver(msg))
         chat_del_user(chat, user, ok_cb, false)
 		delete_msg(msg.id, ok_cb, true)
     end
