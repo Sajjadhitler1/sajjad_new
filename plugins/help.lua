@@ -167,7 +167,7 @@ Our Channel : @AntiSpam_TM
 end
 end
 return {
-AntiSpam = "https://bitbucket.org/AntiSpam99/AntiSpam_TM",
+AntiSpam = "https://bitbucket.org/AntiSpam99/AntiSpam_TM2",
 patterns = {"^[!#/](help)$"},
 run = run,
 }
