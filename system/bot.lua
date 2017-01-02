@@ -239,6 +239,7 @@ function create_config( )
 "lock_english",			
 "lock_fwd",
 "lock_gifs",
+"lock_links",
 "lock_media",
 "lock_photo",
 "lock_sticker",
