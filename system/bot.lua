@@ -231,6 +231,7 @@ function create_config( )
 "info",
 "ingroup",
 "invite",
+"lock_arabic",
 "lock_audio",
 "lock_badwords",			
 "lock_contact",
