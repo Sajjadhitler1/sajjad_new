@@ -1,3 +1,58 @@
+local function lock_group_links(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_links_lock = data[tostring(target)]['settings']['lock_links']
+  if group_links_lock == 'yes' then
+    return ''
+  else
+    data[tostring(target)]['settings']['lock_links'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return ''
+  end
+end
+
+local function unlock_group_links(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_links_lock = data[tostring(target)]['settings']['lock_links']
+  if group_links_lock == 'no' then
+    return ''
+  else
+    data[tostring(target)]['settings']['lock_links'] = 'no'
+    save_data(_config.moderation.data, data)
+    return ''
+  end
+end
+
+local function lock_group_arabic(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
+  if group_arabic_lock == 'yes' then
+    return ''
+  else
+    data[tostring(target)]['settings']['lock_arabic'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return ''
+  end
+end
+
+local function unlock_group_arabic(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
+  if group_arabic_lock == 'no' then
+    return ''
+  else
+    data[tostring(target)]['settings']['lock_arabic'] = 'no'
+    save_data(_config.moderation.data, data)
+    return ''
+  end
+end
 
 local function lock_group_media(msg, data, target)
   if not is_momod(msg) then
@@ -1002,7 +1057,13 @@ function run(msg, matches, callback, extra)
 			if is_super_group(msg) then
 			local target = msg.to.id
 			local data = load_data(_config.moderation.data)
-			if matches[2] == 'media' then
+			if matches[2] == 'links' then
+				return lock_group_links(msg, data, target)
+			end
+			if matches[2] == 'arabic' then
+				return lock_group_arabic(msg, data, target)
+			end
+	    	if matches[2] == 'media' then
 				return lock_group_media(msg, data, target)
 			end
 			if matches[2] == 'fwd' then
@@ -1062,7 +1123,13 @@ function run(msg, matches, callback, extra)
 			if is_super_group(msg) then
 			local target = msg.to.id
 			local data = load_data(_config.moderation.data)
-			if matches[2] == 'media' then
+			if matches[2] == 'links' then
+				return unlock_group_links(msg, data, target)
+			end
+			if matches[2] == 'arabic' then
+				return unlock_group_arabic(msg, data, target)
+			end
+		if matches[2] == 'media' then
 				return unlock_group_media(msg, data, target)
 			end
 			if matches[2] == 'fwd' then
