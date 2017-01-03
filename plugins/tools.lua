@@ -896,7 +896,7 @@ function run(msg, matches, callback, extra)
 	   --Addplug.
 	   --Delplug:
 	        if matches[1] == "delplug" and is_sudo(msg) then
-                reply_msg(msg['id'], "Plugin ["..matches[2].."] Has Been Deleted\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_TM", ok_cb, false)
+                reply_msg(msg['id'], "Plugin ["..matches[2].."] Has Been Deleted\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM", ok_cb, false)
                 return io.popen("cd plugins && rm "..matches[2]..".lua")
             end 
 	   --Delplug.
