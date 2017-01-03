@@ -152,11 +152,23 @@ Download files from link specialy from aparat
 ⚓️!time
 Shows IRAN's time and date
 
+******************************************
+🌹Welcome To AntiSpam_TM Support🌹
 
-Created By : @To_My_Amigos
+Channel :《 @AntiSpam_TM 》™
 
-Our Channel : @AntiSpam_TM
-			
+Creator : 《 @To_My_Amigos 》
+
+Reports : 《 @To_My_Amigos_Bot 》
+
+😊 Who Start's The Fight Get's Removed 
+So Be Friends 😊
+
+Link :
+
+https://telegram.me/joinchat/EkNFij7cWnespVgwzrlABQ
+
+*********************************************
 ]]..''
 
 end
