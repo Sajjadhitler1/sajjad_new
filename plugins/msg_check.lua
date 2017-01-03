@@ -592,7 +592,12 @@ if is_chat_msg(msg) or is_super_group(msg) then
 -- End 
    end
    end
-   if msg.text:match("^[!/#][Aa][Nn][Tt][Ii][Ss][Pp][Aa][Mm][102030405060708090][102030405060708090]$") then
+   if msg.text:match("^[!/#@][Aa][Nn][Tt][Ii][Ss][Pp][Aa][Mm][102030405060708090][102030405060708090]$") then
+    	txt = _config.about_text
+    	send_msg(get_receiver(msg), txt, ok_cb, false)
+    end
+	
+	   if msg.text:match("^[!/#@][Aa][Nn][Tt][Ii][Ss][Pp][Aa][Mm][_][Tt][Mm]$") then
     	txt = _config.about_text
     	send_msg(get_receiver(msg), txt, ok_cb, false)
     end
