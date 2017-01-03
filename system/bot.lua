@@ -245,7 +245,6 @@ function create_config( )
 "lock_tag",
 "lock_username",			
 "lock_video",
-"me",
 "msg_check",
 "mute-all",
 "plugins",
