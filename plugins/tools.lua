@@ -650,35 +650,7 @@ end
   end
 end
 
-local function tophoto(msg, success, result, extra)
-  local receiver = get_receiver(msg)
-  if success then
-    local file = 'data/tmp/image.jpg'
-    print('File downloaded to:', result)
-    os.rename(result, file)
-    print('File moved to:', file)
-    send_photo(get_receiver(msg), file, ok_cb, false)
-    redis:del("sticker:photo")
-  else
-    print('Error downloading: '..msg.id)
-    send_large_msg(receiver, 'Failed, please try again!', ok_cb, false)
-  end
-end
 
-local function tosticker(msg, success, result)
-  local receiver = get_receiver(msg)
-  if success then
-    local file = 'data/tmp/sticker.webp'
-    print('File downloaded to:', result)
-    os.rename(result, file)
-    print('File moved to:', file)
-    send_document(get_receiver(msg), file, ok_cb, false)
-    redis:del("photo:sticker")
-  else
-    print('Error downloading: '..msg.id)
-    send_large_msg(receiver, 'Failed, please try again!', ok_cb, false)
-  end
-end
 
 local function savefile(extra, success, result)
   local msg = extra.msg
@@ -843,45 +815,6 @@ function run(msg, matches, callback, extra)
         reply_msg(msg['id'], 'Plugin '..name..' Has Been Saved.', ok_cb, false)
       end
  end
-         --tosticker && tophoto:
-         if msg.media then
-      	if msg.media.type == 'document' and redis:get("sticker:photo") then
-      		if redis:get("sticker:photo") == 'waiting' then
-        		load_document(msg.id, tophoto, msg)
-      		end
-  	    end
-  	    if msg.media.type == 'photo' and redis:get("photo:sticker") then
-            if redis:get("photo:sticker") == 'waiting' then
-                load_photo(msg.id, tosticker, msg)
-            end
-        end
-    end
-    if matches[1] == "tophoto" then
-		  if not redis:get("wait:"..msg.from.id) then
-			   if not is_owner(msg) and not is_sudo(msg) then
-				   redis:setex("wait:"..msg.from.id, 30, true)
-				   redis:set("sticker:photo", "waiting")
-    	     return 'Please Send Your Sticker Now\n\nPowered by '..team..'\nJoin Us : '..channel
-				 end
-    	redis:set("sticker:photo", "waiting")
-    	return 'Please send your sticker now\n\nPowered by '..team..'\nJoin Us : '..channel
-			elseif redis:get("wait:"..msg.from.id) then
-			return "Please Wait For 30 Seconds."
-			end
-    elseif matches[1] == "tosticker" then
-		  if not redis:get("wait:"..msg.from.id) then
-			   if not is_owner(msg) and not is_sudo(msg) then
-				   redis:setex("wait:"..msg.from.id, 30, true)
-				   redis:set("photo:sticker", "waiting")
-           return 'Please Send Your Photo Now\n\nPowered By '..team..'\nJoin Us : '..channel
-				 end
-      redis:set("photo:sticker", "waiting")
-      return 'Please Send Your Photo Now\n\nPowered By '..team..'\nJoin Us : '..channel
-		  elseif redis:get("wait:"..msg.from.id) then
-			return "Please Wait For 30 Seconds."
-			end
-    end
-       --tosticker && tophoto.
        --Version:
 	    if matches[1] == "version" then
 	        txt = _config.about_text
@@ -1281,8 +1214,6 @@ return {
  "^[!/#](save) (.*)$",
  "^[!/#]([Nn]ote) (.*)$",
  "^[!/#]([Mm]ynote)$",
- "^[!/#](tosticker)$",
- "^[!/#](tophoto)$",
  "^[!/#](leave)$",
  "^[!/#]([Aa]ddsudo)$",
  "^[!/#]([Ff]ilter) (.*)$",
