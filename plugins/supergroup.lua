@@ -1351,7 +1351,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-   local text = "SuperGroup Settings For ["..msg.to.print_name.."]:\n\n[🔐] Default Locks :\nLock Links 👉 "..settings.lock_links.."\nLock Flood 👉 "..settings.flood.."\nLock Spam 👉 "..settings.lock_spam.."\nLock Arabic/Persian 👉 "..settings.lock_arabic.."\nLock English 👉 "..settings.lock_english.."\nLock Member 👉 "..settings.lock_member.."\nLock RTL 👉 "..settings.lock_rtl.."\nLock Tgservice  👉 "..settings.lock_tgservice.."\nLock Sticker 👉 "..settings.lock_sticker.."\n\n[🔏] New Locks :\nLock Forward 👉 "..settings.lock_fwd.."\nLock Reply 👉 "..settings.lock_reply.."\nLock Bots 👉 "..settings.lock_bots.."\nLock Share 👉 "..settings.lock_share.."\nLock Tag 👉 "..settings.lock_tag.."\nLock Username 👉 "..settings.username.."\nLock Number 👉 "..settings.lock_number.."\nLock Emoji 👉 "..settings.lock_emoji.."\nLock Poker 👉 "..settings.lock_poker.."\nLock Media 👉 "..settings.lock_media.."\nLock Documents 👉 "..settings.lock_documents.."\nLock Audio 👉 "..settings.lock_audio.."\nLock Photo 👉 "..settings.lock_photo.."\nLock Video 👉 "..settings.lock_video.."\nLock Gifs 👉 "..settings.lock_gifs.."\nLock Inline 👉 "..settings.lock_inline.."\nLock Cmd 👉 "..settings.lock_cmd.."\nLock Text 👉 "..settings.lock_text.."\nLock Badwords 👉 "..settings.lock_badwords.."\nLock All 👉 "..settings.lock_all.."\n\n[🔧] OTHER:\n[👥] Public 👉 "..settings.public.."\n[📛] Strict Settings 👉 "..settings.strict.."\n[👀]Flood Sensitivity 👉 "..NUM_MSG_MAX.."|20"
+   local text = "SuperGroup Settings For ["..msg.to.print_name.."]:\n\n[🔐] Default Locks :\nLock Links 👉 "..settings.lock_links.."\nLock Flood 👉 "..settings.flood.."\nLock Spam 👉 "..settings.lock_spam.."\nLock Arabic/Persian 👉 "..settings.lock_arabic.."\nLock English 👉 "..settings.lock_english.."\nLock Member 👉 "..settings.lock_member.."\nLock RTL 👉 "..settings.lock_rtl.."\nLock Tgservice  👉 "..settings.lock_tgservice.."\nLock Sticker 👉 "..settings.lock_sticker.."\n\n[🔏] New Locks :\nLock Forward 👉 "..settings.lock_fwd.."\nLock Reply 👉 "..settings.lock_reply.."\nLock Bots 👉 "..settings.lock_bots.."\nLock Share 👉 "..settings.lock_share.."\nLock Tag 👉 "..settings.lock_tag.."\nLock Username 👉 "..settings.username.."\nLock Number 👉 "..settings.lock_number.."\nLock Emoji 👉 "..settings.lock_emoji.."\nLock Poker 👉 "..settings.lock_poker.."\nLock Media 👉 "..settings.lock_media.."\nLock Documents 👉 "..settings.lock_documents.."\nLock Audio 👉 "..settings.lock_audio.."\nLock Photo 👉 "..settings.lock_photo.."\nLock Video 👉 "..settings.lock_video.."\nLock Gifs 👉 "..settings.lock_gifs.."\nLock Inline 👉 "..settings.lock_inline.."\nLock Cmd 👉 "..settings.lock_cmd.."\nLock Text 👉 "..settings.lock_text.."\nLock Badwords 👉 "..settings.lock_badwords.."\nLock All 👉 "..settings.lock_all.."\n\n[🔧] OTHER:\n[👥] Public 👉 "..settings.public.."\n[📛] Strict Settings 👉 "..settings.strict.."\n[👀]Flood Sensitivity 👉 "..NUM_MSG_MAX.."|20\n\n[👥] About SuperGroup :\nName : "..msg.to.print_name.."\nID : "..msg.to.id.."\n\n[😶] "..muted_user_list(msg.to.id)
   return text
 end
 
@@ -1400,7 +1400,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
- local text = "SuperGroup Settings For ["..msg.to.print_name.."]:\n\n[🔐] Default Locks :\nLock Links 👉 "..settings.lock_links.."\nLock Flood 👉 "..settings.flood.."\nLock Spam 👉 "..settings.lock_spam.."\nLock Arabic/Persian 👉 "..settings.lock_arabic.."\nLock English 👉 "..settings.lock_english.."\nLock Member 👉 "..settings.lock_member.."\nLock RTL 👉 "..settings.lock_rtl.."\nLock Tgservice  👉 "..settings.lock_tgservice.."\nLock Sticker 👉 "..settings.lock_sticker.."\n\n[🔏] New Locks :\nLock Forward 👉 "..settings.lock_fwd.."\nLock Reply 👉 "..settings.lock_reply.."\nLock Bots 👉 "..settings.lock_bots.."\nLock Share 👉 "..settings.lock_share.."\nLock Tag 👉 "..settings.lock_tag.."\nLock Username 👉 "..settings.username.."\nLock Number 👉 "..settings.lock_number.."\nLock Emoji 👉 "..settings.lock_emoji.."\nLock Poker 👉 "..settings.lock_poker.."\nLock Media 👉 "..settings.lock_media.."\nLock Documents 👉 "..settings.lock_documents.."\nLock Audio 👉 "..settings.lock_audio.."\nLock Photo 👉 "..settings.lock_photo.."\nLock Video 👉 "..settings.lock_video.."\nLock Gifs 👉 "..settings.lock_gifs.."\nLock Inline 👉 "..settings.lock_inline.."\nLock Cmd 👉 "..settings.lock_cmd.."\nLock Text 👉 "..settings.lock_text.."\nLock Badwords 👉 "..settings.lock_badwords.."\nLock All 👉 "..settings.lock_all.."\n\n[🔧] OTHER:\n[👥] Public 👉 "..settings.public.."\n[📛] Strict Settings 👉 "..settings.strict.."\n[👀]Flood Sensitivity 👉 "..NUM_MSG_MAX.."|20\n\n[👥] About SuperGroup :\nName: "..msg.to.print_name.."\nID: "..msg.to.id.."\n\n[😶] "..muted_user_list(msg.to.id)
+ local text = "SuperGroup Settings For ["..msg.to.print_name.."]:\n\n[🔐] Default Locks :\nLock Links 👉 "..settings.lock_links.."\nLock Flood 👉 "..settings.flood.."\nLock Spam 👉 "..settings.lock_spam.."\nLock Arabic/Persian 👉 "..settings.lock_arabic.."\nLock English 👉 "..settings.lock_english.."\nLock Member 👉 "..settings.lock_member.."\nLock RTL 👉 "..settings.lock_rtl.."\nLock Tgservice  👉 "..settings.lock_tgservice.."\nLock Sticker 👉 "..settings.lock_sticker.."\n\n[🔏] New Locks :\nLock Forward 👉 "..settings.lock_fwd.."\nLock Reply 👉 "..settings.lock_reply.."\nLock Bots 👉 "..settings.lock_bots.."\nLock Share 👉 "..settings.lock_share.."\nLock Tag 👉 "..settings.lock_tag.."\nLock Username 👉 "..settings.username.."\nLock Number 👉 "..settings.lock_number.."\nLock Emoji 👉 "..settings.lock_emoji.."\nLock Poker 👉 "..settings.lock_poker.."\nLock Media 👉 "..settings.lock_media.."\nLock Documents 👉 "..settings.lock_documents.."\nLock Audio 👉 "..settings.lock_audio.."\nLock Photo 👉 "..settings.lock_photo.."\nLock Video 👉 "..settings.lock_video.."\nLock Gifs 👉 "..settings.lock_gifs.."\nLock Inline 👉 "..settings.lock_inline.."\nLock Cmd 👉 "..settings.lock_cmd.."\nLock Text 👉 "..settings.lock_text.."\nLock Badwords 👉 "..settings.lock_badwords.."\nLock All 👉 "..settings.lock_all.."\n\n[🔧] OTHER:\n[👥] Public 👉 "..settings.public.."\n[📛] Strict Settings 👉 "..settings.strict.."\n[👀]Flood Sensitivity 👉 "..NUM_MSG_MAX.."|20\n\n[👥] About SuperGroup :\nName : "..msg.to.print_name.."\nID : "..msg.to.id.."\n\n[😶] "..muted_user_list(msg.to.id)
  return text
 end
 
@@ -2276,7 +2276,7 @@ end
 				return
 			end
 			if not is_owner(msg) then
-				return "Only owner/admin can promote"
+				return "Only owner/admin Can Promote"
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
@@ -2318,7 +2318,7 @@ end
 				return
 			end
 			if not is_owner(msg) then
-				return "Only Owner/Support/Admin Can Promote"
+				return "Only Owner/Support/Admin Can Dromote"
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
@@ -2410,7 +2410,7 @@ end
 					data[tostring(msg.to.id)]['moderators'][tostring(k)] = nil
 					save_data(_config.moderation.data, data)
 				end
-				return 'Modlist Has Been Cleaned'
+				return 'Modlist Has Been Cleaned\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM'
 			end
 			if matches[2] == 'rules' then
 				local data_cat = 'rules'
@@ -2433,11 +2433,11 @@ end
 				channel_set_about(receiver, about_text, ok_cb, false)
 				return "About has been cleaned"
 			end
-			if matches[2] == 'mutelist' then
+			if matches[2] == 'silentlist' then
 				chat_id = msg.to.id
 				local hash =  'mute_user:'..chat_id
 					redis:del(hash)
-				return "Mutelist Cleaned\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM"
+				return "Silentlist Cleaned\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM"
 			end
 			if matches[2] == 'username' and is_admin1(msg) then
 				local function ok_username_cb (extra, success, result)
@@ -2672,7 +2672,7 @@ end
 			end
 		end
 
-		if matches[1] == "muteuser" and is_momod(msg) then
+		if matches[1] == "silent" or matches[1] == "unsilent" and is_momod(msg) then
 			local chat_id = msg.to.id
 			local hash = "mute_user"..chat_id
 			local user_id = ""
@@ -2680,16 +2680,22 @@ end
 				local receiver = get_receiver(msg)
 				local get_cmd = "mute_user"
 				muteuser = get_message(msg.reply_id, get_message_callback, {receiver = receiver, get_cmd = get_cmd, msg = msg})
-			elseif matches[1] == "muteuser" and matches[2] and string.match(matches[2], '^%d+$') then
+			elseif matches[1] == "silent" or matches[1] == "unsilent" and string.match(matches[2], '^%d+$') then
 				local user_id = matches[2]
 				if is_muted_user(chat_id, user_id) then
 					unmute_user(chat_id, user_id)
-					return "["..user_id.."] Removed From The Muted Users List"
-				elseif is_owner(msg) then
+					savelog(msg.to.id, name_log.." ["..msg.from.id.."] Removed ["..user_id.."] From The Muted Users List\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM")
+					return "["..user_id.."] Removed From The Muted Users List\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM"
+				elseif is_momod(msg) then
 					mute_user(chat_id, user_id)
-					return "["..user_id.."] Added To The Muted User List"
+				local mutedhash = 'muted:'..msg.from.id..':'..msg.to.id
+        redis:incr(mutedhash)
+        local mutedhash = 'muted:'..msg.from.id..':'..msg.to.id
+        local muted = redis:get(mutedhash)
+	--savelog(msg.to.id, name_log.." ["..msg.from.id.."] added ["..user_id.."] to the muted users list\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM")
+					return "["..user_id.."] Added To The Muted User List\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM"
 				end
-			elseif matches[1] == "muteuser" and matches[2] and not string.match(matches[2], '^%d+$') then
+			elseif matches[1] == "silent" or matches[1] == "unsilent" and not string.match(matches[2], '^%d+$') then
 				local receiver = get_receiver(msg)
 				local get_cmd = "mute_user"
 				local username = matches[2]
@@ -2698,8 +2704,9 @@ end
 			end
 		end
 
-		if matches[1] == "mutelist" and is_momod(msg) then
+		if matches[1] == "silentlist" and is_momod(msg) then
 			local chat_id = msg.to.id
+			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup mutelist")
 			return muted_user_list(chat_id)
 		end
 
@@ -2813,15 +2820,17 @@ return {
 	"^[#!/]([Dd]el)$",
 	"^[#!/]([Ll]ock) (.*)$",
 	"^[#!/]([Uu]nlock) (.*)$",
-	"^[#!/]([Mm]uteuser)$",
-	"^[#!/]([Mm]uteuser) (.*)$",
+	"^[#!/]([Ss]ilent)$",
+	"^[#!/]([Ss]ilent) (.*)$",
+	"^[#!/]([Uu]nsilent)$",
+	"^[#!/]([Uu]nsilent) (.*)$",
 	"^[#!/]([Pp]ublic) (.*)$",
 	"^[#!/]([Ss]ettings)$",
 	"^[#!/]([Ss]ettingsall)$",
 	"^[#!/]([Rr]ules)$",
 	"^[#!/]([Ss]etflood) (%d+)$",
 	"^[#!/]([Cc]lean) (.*)$",
-	"^[#!/]([Mm]utelist)$",
+	"^[#!/]([Ss]ilentlist)$",
     "[#!/](mp) (.*)",
 	"[#!/](md) (.*)",
     "^(https://telegram.me/joinchat/%S+)$",
