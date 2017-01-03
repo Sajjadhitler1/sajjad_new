@@ -220,7 +220,6 @@ function create_config( )
 "anti_spam",
 "banhammer",
 "broadcast",
-"bye",
 "chat",
 "cleandeleted",			
 "clear_members",
@@ -253,8 +252,8 @@ function create_config( )
 "supergroup",
 "time",
 "tools",
-"welcome",
 "whitelist",
+"wlc_and_bye",
  
      },
     sudo_users = {306398602,0,tonumber(our_id)},--Sudo users
