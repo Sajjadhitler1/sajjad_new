@@ -227,7 +227,6 @@ function create_config( )
 "dler",
 "groups",
 "help",
-"idme",
 "info",
 "ingroup",
 "invite",
