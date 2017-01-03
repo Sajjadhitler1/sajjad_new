@@ -126,8 +126,8 @@ Returns group owner
 ⚓️!modlist
 Returns Moderators list
 			
-⚓️!id or id
-Return SuperGroup ID or user id
+⚓️!id
+Return SuperGroup ID And user id
 			
 ⚓️!kickme
 Kicks user from SuperGroup
