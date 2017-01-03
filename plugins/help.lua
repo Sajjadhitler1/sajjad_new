@@ -13,7 +13,7 @@ Kicks a user from SuperGroup
 Kicks a user from SuperGroup	
 			
 ⚓️!who
-gives you a list of members
+Gives you a list of members
 			
 ⚓️!ban
 Bans user from the SuperGroup
@@ -29,15 +29,13 @@ Promote a SuperGroup moderator
 			
 ⚓️!demote [username|id]
 Demote a SuperGroup moderator
-			
-			
+						
 ⚓️!setadmin [username|id]
 Promote a SuperGroup admin		
 			
 ⚓️!demoteadmin [username|id]
 Demote a SuperGroup admin	
-			
-			
+						
 ⚓️[!setname|!setphoto|!setrules|!setabout]
 Sets the chat name, photo, rules, about text
 			
@@ -49,19 +47,21 @@ Retireives the group link
 			
 ⚓️[!lock|!unlock] [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict|media|bots|fwd|reply|share|tag|number|badwords|cmd|username|all]
 Lock group settings
-			
-			
+						
 ⚓️!setflood [value]
 Set [value] as flood sensitivity, Max:20 and Min:2
 			
 ⚓️!settings
 Returns chat settings
-			
-⚓️!mutelist
-Returns mutes or mute lists for chat
 
-⚓️[!muteuser] [reply on users msg|username|id ]
-silents user
+⚓️[!silent] [reply on users msg|username|id ]
+Silents user
+
+⚓️[!unsilent] [reply on users msg|username|id ]
+Unsilents user
+			
+⚓️!silentlist
+Returns mutes or mute lists for chat
 
 ⚓️[!whitelist] [reply on users msg|username|id ]
 Adds user/bot to whitelist
@@ -70,11 +70,10 @@ Adds user/bot to whitelist
 Returns SuperGroup ban list
 
 ⚓️!rmsg [value]
-delets groups message by value
+Delets groups message by value
 			
-⚓️!clean [rules|about|modlist|mutelist|deleted|whitelist]
-cleans those you see
-(deleted) kicks deleted accounts
+⚓️!clean [rules|about|modlist|silentlist|deleted|whitelist]
+Cleans those you see or (deleted) kicks deleted accounts
 			
 ⚓️!clear members		
 Kicks All Members
@@ -86,28 +85,28 @@ Deletes a message by reply
 Set chat visibility in pm !chats or !chatlist commands
 
 ⚓️!chats
-show list of bot groups in pv
+Show list of bot groups in pv
 			
 ⚓️!broadcast [text]
-send this command in PV . the bot well send your massege to all groups and supergroups
+Send this command in PV . the bot well send your massege to all groups and supergroups
 
 ⚓️!muteall
-mute's all
+Mute's all
 
 ⚓️!muteall h m s 
-muteall witn timer
+Muteall witn timer
 h Hour(s)
 m Minute(s)
 s Second(s)
 
 ⚓️!chat + [text]
-saves a text with its first words name
+Saves a text with its first words name
 			
 ⚓️!chat - [text]
-removes the saved text
+Removes the saved text
 			
 ⚓️!chat rm
-removes all saved texts
+Removes all saved texts
 			
 ⚓️!antibot [enable / disable / allow / disallow]
 activating anti-bot for let then enter or not fo channels
@@ -136,22 +135,22 @@ Return SuperGroup ID And user id
 Kicks user from SuperGroup
 			
 ⚓️!note text
-add a note
+Add a note
 			
 ⚓️!mynote
-get note
+Get note
 								
 ⚓️!rules
 Retrieves the chat rules
 					
 ⚓️!me
-shows your rank
+Shows your rank
 			
 ⚓️!dler
-download files from link specialy from aparat
+Download files from link specialy from aparat
 			
 ⚓️!time
-shows IRAN's time and date
+Shows IRAN's time and date
 
 
 Created By : @To_My_Amigos
