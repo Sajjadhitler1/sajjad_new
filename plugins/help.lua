@@ -141,7 +141,7 @@ get note
 ⚓️!rules
 Retrieves the chat rules
 					
-⚓️!semat
+⚓️!me
 shows your rank
 			
 ⚓️!dler
