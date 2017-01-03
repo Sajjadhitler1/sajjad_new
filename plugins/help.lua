@@ -60,8 +60,11 @@ Returns chat settings
 ⚓️!mutelist
 Returns mutes or mute lists for chat
 
-⚓️[!muteuser|!unmuteuser] [reply on users msg|username|id ]
+⚓️[!muteuser] [reply on users msg|username|id ]
 silents user
+
+⚓️[!whitelist] [reply on users msg|username|id ]
+Adds user/bot to whitelist
 		
 ⚓️!banlist
 Returns SuperGroup ban list
@@ -69,7 +72,7 @@ Returns SuperGroup ban list
 ⚓️!rmsg [value]
 delets groups message by value
 			
-⚓️!clean [rules|about|modlist|mutelist|deleted|]
+⚓️!clean [rules|about|modlist|mutelist|deleted|whitelist]
 cleans those you see
 (deleted) kicks deleted accounts
 			
