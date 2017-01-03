@@ -1147,12 +1147,12 @@ function run(msg, matches, callback, extra)
 		    if not is_owner(msg) then
 			    return "Just For Groups Owner"
 			end
-			say = "Leaving Text Has Been Removed"
+			say = "Leaving Text Has Been Removed\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_TM"
 			if redis:get("bye:"..msg.to.id) then
                 redis:del("bye:"..msg.to.id)
                 send_msg(get_receiver(msg), say, ok_cb, false)
             else
-                return "Leaving Text Is Not Set"
+                return "Leaving Text Is Not Set\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_TM"
             end
         end
 	   --Setbye.
@@ -1169,7 +1169,7 @@ function run(msg, matches, callback, extra)
 			    return "Just For Groups Owner"
 			end	
 			redis:del('wlc:'..msg.to.id)
-            return 'Welcome Text Has Been Removed'
+            return 'Welcome Text Has Been Removed\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_TM'
 		end
 		if matches[1] == 'chat_add_user' or matches[1] == 'chat_add_user_link' or matches[1] == 'channel_invite' then
 		    send = redis:get("wlc:"..msg.to.id)
