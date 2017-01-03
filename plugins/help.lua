@@ -137,17 +137,10 @@ add a note
 			
 ⚓️!mynote
 get note
-						
-⚓️!tosticker
-converts photo to sticker
-   
-⚓️!tophoto
-converts sticker to photo
-			
+								
 ⚓️!rules
 Retrieves the chat rules
-		
-			
+					
 ⚓️!semat
 shows your rank
 			
