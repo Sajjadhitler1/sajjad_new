@@ -4,7 +4,7 @@ function run(msg, matches)
 if msg.to.type == 'channel' and is_momod(msg) then
   return ''..[[
 
-SuperGroup English Help Text With English Commands :
+** SuperGroup English Help Text With English Commands **
 
 ⚓️!block
 Kicks a user from SuperGroup
@@ -45,7 +45,7 @@ Generates a new group link
 ⚓️!link
 Retireives the group link
 			
-⚓️[!lock|!unlock] [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict|media|bots|fwd|reply|share|tag|number|badwords|cmd|username|all]
+⚓️[!lock|!unlock] [links|flood|spam|arabic|english|member|rtl|sticker|contacts|strict|media|bots|fwd|reply|share|tag|number|badwords|cmd|username|all]
 Lock group settings
 						
 ⚓️!setflood [value]
@@ -111,7 +111,7 @@ Removes all saved texts
 ⚓️!antibot [enable / disable / allow / disallow]
 activating anti-bot for let then enter or not fo channels
 			
-SuperGroup Commands: (For memebers and moderators!)
+** SuperGroup Commands: (For memebers and moderators!) **
 
 ⚓️!version
 Displays a general text about the AntiSpam Cli Bot  
@@ -152,7 +152,8 @@ Download files from link specialy from aparat
 ⚓️!time
 Shows IRAN's time and date
 
-******************************************
+***********************************
+
 🌹Welcome To AntiSpam_TM Support🌹
 
 Channel :《 @AntiSpam_TM 》™
@@ -168,7 +169,7 @@ Link :
 
 https://telegram.me/joinchat/EkNFij7cWnespVgwzrlABQ
 
-*********************************************
+************************************
 ]]..''
 
 end
