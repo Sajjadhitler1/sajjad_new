@@ -1147,7 +1147,7 @@ function run(msg, matches, callback, extra)
 		    if not is_owner(msg) then
 			    return "Just For Groups Owner"
 			end
-			say = "Leaving Text Has Been Removed\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_TM"
+			say = "Leaving Text Has Been Removed"
 			if redis:get("bye:"..msg.to.id) then
                 redis:del("bye:"..msg.to.id)
                 send_msg(get_receiver(msg), say, ok_cb, false)
@@ -1157,48 +1157,27 @@ function run(msg, matches, callback, extra)
         end
 	   --Setbye.
 	   --Setwlc:
-       if res ~= 200 then return end
-       local jdat = json:decode(urlwlc)
 	    if matches[1] == 'setwlc' and matches[2] then
 	        if not is_owner(msg) then
 			    return "Just For Groups Owner"
 			end
-			redis:hset('wlc:'..msg.to.id, 'welcome', matches[2])
+			redis:set('wlc:'..msg.to.id, matches[2])
             return 'Welcome Text Has Been Set To : \n'..matches[2]
 	    end
 		if matches[1] == 'delwlc' then
 		    if not is_owner(msg) then
 			    return "Just For Groups Owner"
 			end	
-			redis:hdel('wlc:'..msg.to.id,'welcome')
-            return 'Welcome Text Has Been Removed\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_TM'
+			redis:del('wlc:'..msg.to.id)
+            return 'Welcome Text Has Been Removed'
 		end
-		if matches[1] == 'chat_add_user' or 'chat_add_user_link' or 'channel_invite' and msg.service then
-				data = load_data(_config.moderation.data)
-				rules = data[tostring(msg.to.id)]['rules']
-				about = data[tostring(msg.to.id)]['description']
-				wlc = 'wlc:'..msg.to.id
-	            urlwlc , res = http.request('http://api.gpmod.ir/time/')
-				group_welcome = redis:hget(wlc,'welcome')
-                --[[group_welcome = string.gsub(group_welcome, '{gpname}', msg.to.title)
-                group_welcome = string.gsub(group_welcome, '{firstname}', ""..(msg.from.first_name or '').."")
-                group_welcome = string.gsub(group_welcome, '{lastname}', ""..(msg.from.last_name or '').."")
-                group_welcome = string.gsub(group_welcome, '{username}', "@"..(msg.from.username or '').."")
-                group_welcome = string.gsub(group_welcome, '{fatime}', ""..(jdat.FAtime).."")
-                group_welcome = string.gsub(group_welcome, '{entime}', ""..(jdat.ENtime).."")
-                group_welcome = string.gsub(group_welcome, '{fadate}', ""..(jdat.FAdate).."")
-                group_welcome = string.gsub(group_welcome, '{endate}', ""..(jdat.ENdate).."")
-                group_welcome = string.gsub(group_welcome, '{rules}', ""..(rules or '').."")
-                group_welcome = string.gsub(group_welcome, '{about}', ""..(about or '').."")
-                group_welcome = string.gsub(group_welcome, '{نام گروه}', msg.to.title)
-                group_welcome = string.gsub(group_welcome, '{نام اول}', ""..(msg.from.first_name or '').."")
-                group_welcome = string.gsub(group_welcome, '{نام آخر}', ""..(msg.from.last_name or '').."")
-                group_welcome = string.gsub(group_welcome, '{نام کاربری}', "@"..(msg.from.username or '').."")
-                group_welcome = string.gsub(group_welcome, '{ساعت فارسی}', ""..(jdat.FAtime).."")
-                group_welcome = string.gsub(group_welcome, '{ساعت انگلیسی}', ""..(jdat.ENtime).."")
-                group_welcome = string.gsub(group_welcome, '{تاریخ فارسی}', ""..(jdat.FAdate).."")
-                group_welcome = string.gsub(group_welcome, '{تاریخ انگلیسی}', ""..(jdat.ENdate).."")]]
-				return group_welcome
+		if matches[1] == 'chat_add_user' or matches[1] == 'chat_add_user_link' or matches[1] == 'channel_invite' then
+		    send = redis:get("wlc:"..msg.to.id)
+			if send then
+                return send
+            elseif not send then
+                return
+            end
 	    end
 	   --Setwlc.
 end
