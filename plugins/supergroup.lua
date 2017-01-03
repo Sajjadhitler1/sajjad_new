@@ -2079,6 +2079,23 @@ local function run(msg, matches)
 	reply_msg(msg.id, text, ok_cb, false)
 end
 		end
+		
+  if matches[1]:lower() == 'me' and not is_momod(msg) then
+     send_document(get_receiver(msg), "./data/tmp/member.webp", ok_cb, false)
+    return 'You Are A Member :/'
+  end
+   if matches[1]:lower() == 'me' and is_sudo(msg) then
+     send_document(get_receiver(msg), "./data/tmp/sudo.webp", ok_cb, false)
+    return 'You Are My Sudo ;)'
+   end
+    if matches[1]:lower() == 'me' and is_owner(msg) then
+     send_document(get_receiver(msg), "./data/tmp/owner.webp", ok_cb, false)
+    return 'You Are An Owner :)'
+   end
+  if matches[1]:lower() == 'me' and is_momod(msg) then
+     send_document(get_receiver(msg), "./data/tmp/momod.webp", ok_cb, false)
+    return 'You Are An Admin :)'
+  end
 
 		if matches[1] == 'kickme' then
 			if msg.to.type == 'channel' then
@@ -2771,6 +2788,7 @@ return {
 	"^[#!/]([Tt]osuper)$",
 	"^[#!/]([Ii][Dd])$",
 	"^[#!/]([Ii][Dd]) (.*)$",
+	"^[#!/]([Mm][Ee])$",
 	"^[#!/]([Kk]ickme)$",
 	"^[#!/]([Kk]ick) (.*)$",
 	"^[#!/]([Nn]ewlink)$",
