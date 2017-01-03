@@ -2071,11 +2071,13 @@ local function run(msg, matches)
 				}
 				local username = matches[2]
 				local username = username:gsub("@","")
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested ID for: @"..username)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
-			
-				return "SuperGroup ID for " ..string.gsub(msg.to.print_name, "_", " ").. ":\n\n"..msg.to.id
-			end
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
+				text = "Full Name :\n》➣ " ..string.gsub(msg.from.print_name, "_", " ").. "\nUsername :\n》➣ @"..(msg.from.username or '----').."\nYour ID :\n》➣ "..msg.from.id.."\nYour Link :\n》➣ telegram.me/"..(msg.from.username or '').."\nSuperGroup Name :\n》➣ " ..string.gsub(msg.to.print_name, "_", " ").. "\nSuperGroup ID :\n》➣ "..msg.to.id
+	reply_msg(msg.id, text, ok_cb, false)
+end
 		end
 
 		if matches[1] == 'kickme' then
@@ -2767,7 +2769,7 @@ return {
     "^[#!/]([Bb]lock) (.*)",
 	"^[#!/]([Bb]lock)",
 	"^[#!/]([Tt]osuper)$",
-	"^[#!/]([Ii][Dd])$",
+	"^[#!/]([Ii][Dd][from]) (.*)$",
 	"^[#!/]([Ii][Dd]) (.*)$",
 	"^[#!/]([Kk]ickme)$",
 	"^[#!/]([Kk]ick) (.*)$",
