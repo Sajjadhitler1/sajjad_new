@@ -210,7 +210,7 @@ local function lock_group_links(msg, data, target)
   end
   local group_links_lock = data[tostring(target)]['settings']['lock_links']
   if group_links_lock == 'yes' then
-    return '🔐 Link Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Link Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['lock_links'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -224,7 +224,7 @@ local function unlock_group_links(msg, data, target)
   end
   local group_links_lock = data[tostring(target)]['settings']['lock_links']
   if group_links_lock == 'no' then
-    return '🔓 Link Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Link Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_links'] = 'no'
     save_data(_config.moderation.data, data)
@@ -241,7 +241,7 @@ local function lock_group_spam(msg, data, target)
   end
   local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
   if group_spam_lock == 'yes' then
-    return '🔐 Spam Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Spam Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['lock_spam'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -255,11 +255,11 @@ local function unlock_group_spam(msg, data, target)
   end
   local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
   if group_spam_lock == 'no' then
-    return '🔓 Spam Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Spam Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_spam'] = 'no'
     save_data(_config.moderation.data, data)
-    return '🔓 Emoji Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Spam Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   end
 end
 
@@ -269,7 +269,7 @@ local function lock_group_flood(msg, data, target)
   end
   local group_flood_lock = data[tostring(target)]['settings']['flood']
   if group_flood_lock == 'yes' then
-    return '🔐 Flood Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Flood Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['flood'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -283,7 +283,7 @@ local function unlock_group_flood(msg, data, target)
   end
   local group_flood_lock = data[tostring(target)]['settings']['flood']
   if group_flood_lock == 'no' then
-    return '🔓 Flood Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Flood Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['flood'] = 'no'
     save_data(_config.moderation.data, data)
@@ -297,7 +297,7 @@ local function lock_group_arabic(msg, data, target)
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
   if group_arabic_lock == 'yes' then
-    return '🔐 Arabic/Persain Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Arabic/Persain Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['lock_arabic'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -311,7 +311,7 @@ local function unlock_group_arabic(msg, data, target)
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
   if group_arabic_lock == 'no' then
-    return '🔓 Arabic/Persain Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Arabic/Persain Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_arabic'] = 'no'
     save_data(_config.moderation.data, data)
@@ -465,7 +465,7 @@ local function lock_group_media(msg, data, target)
   end
   local group_media_lock = data[tostring(target)]['settings']['lock_media']
   if group_media_lock == 'yes' then
-    return '🔐 Media Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Media Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['lock_media'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -479,7 +479,7 @@ local function unlock_group_media(msg, data, target)
   end
   local group_media_lock = data[tostring(target)]['settings']['lock_media']
   if group_media_lock == 'no' then
-    return '🔓 Media Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Media Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_media'] = 'no'
     save_data(_config.moderation.data, data)
@@ -493,7 +493,7 @@ end
   end
   local group_fwd_lock = data[tostring(target)]['settings']['lock_fwd']
   if group_fwd_lock == 'yes' then
-    return '🔐 Forward Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Forward Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['lock_fwd'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -509,7 +509,7 @@ local function unlock_group_fwd(msg, data, target)
   end
   local group_fwd_lock = data[tostring(target)]['settings']['lock_fwd']
   if group_fwd_lock == 'no' then
-    return '🔓 Forward Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Forward Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_fwd'] = 'no'
     save_data(_config.moderation.data, data)
@@ -525,7 +525,7 @@ local function lock_group_reply(msg, data, target)
   end
   local group_reply_lock = data[tostring(target)]['settings']['lock_reply']
   if group_reply_lock == 'yes' then
-    return '🔐 Reply Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Reply Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['lock_reply'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -541,7 +541,7 @@ local function unlock_group_reply(msg, data, target)
   end
   local group_reply_lock = data[tostring(target)]['settings']['lock_reply']
   if group_reply_lock == 'no' then
-    return '🔓 Reply Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Reply Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_reply'] = 'no'
     save_data(_config.moderation.data, data)
@@ -571,7 +571,7 @@ local function unlock_group_share(msg, data, target)
   end
   local group_share_lock = data[tostring(target)]['settings']['lock_share']
   if group_share_lock == 'no' then
-    return '🔓 Share Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Share Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_share'] = 'no'
     save_data(_config.moderation.data, data)
@@ -585,11 +585,11 @@ local function lock_group_tag(msg, data, target)
   end
   local group_tag_lock = data[tostring(target)]['settings']['lock_tag']
   if group_tag_lock == 'yes' then
-    return '🔐 #HashTag Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 #HashTag Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['lock_tag'] = 'yes'
     save_data(_config.moderation.data, data)
-    return '🔐 #HashTag Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM '
+    return '🔐 #HashTag Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   end
 end
 
@@ -599,7 +599,7 @@ local function unlock_group_tag(msg, data, target)
   end
   local group_tag_lock = data[tostring(target)]['settings']['lock_tag']
   if group_tag_lock == 'no' then
-    return '🔓 #HashTag Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 #HashTag Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_tag'] = 'no'
     save_data(_config.moderation.data, data)
@@ -613,7 +613,7 @@ local function lock_group_bots(msg, data, target)
   end
   local group_bots_lock = data[tostring(target)]['settings']['lock_bots']
   if group_bots_lock == 'yes' then
-    return '🔐 Bots Are Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Bots Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['lock_bots'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -627,7 +627,7 @@ local function unlock_group_bots(msg, data, target)
   end
   local group_bots_lock = data[tostring(target)]['settings']['lock_bots']
   if group_bots_lock == 'no' then
-    return '🔓 Bots Are Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Bots Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_bots'] = 'no'
     save_data(_config.moderation.data, data)
@@ -641,7 +641,7 @@ local function lock_group_number(msg, data, target)
   end
   local group_number_lock = data[tostring(target)]['settings']['lock_number']
   if group_number_lock == 'yes' then
-    return '🔐 Number Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Number Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['lock_number'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -655,7 +655,7 @@ local function unlock_group_number(msg, data, target)
   end
   local group_number_lock = data[tostring(target)]['settings']['lock_number']
   if group_number_lock == 'no' then
-    return '🔓 Number Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Number Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_number'] = 'no'
     save_data(_config.moderation.data, data)
@@ -669,7 +669,7 @@ local function lock_group_poker(msg, data, target)
   end
   local group_poker_lock = data[tostring(target)]['settings']['lock_poker']
   if group_poker_lock == 'yes' then
-    return '🔐 Poker Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Poker Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['lock_poker'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -683,7 +683,7 @@ local function unlock_group_poker(msg, data, target)
   end
   local group_poker_lock = data[tostring(target)]['settings']['lock_poker']
   if group_poker_lock == 'no' then
-    return '🔓 Poker Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Poker Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_poker'] = 'no'
     save_data(_config.moderation.data, data)
@@ -699,7 +699,7 @@ end
   end
   local group_audio_lock = data[tostring(target)]['settings']['lock_audio']
   if group_audio_lock == 'yes' and is_muted(chat_id, msg_type..': yes') then
-    return '🔐 Audio Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Audio Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     if not is_muted(chat_id, msg_type..': yes') then
 		mute(chat_id, msg_type)
@@ -718,7 +718,7 @@ local function unlock_group_audio(msg, data, target)
   end
   local group_audio_lock = data[tostring(target)]['settings']['lock_audio']
   if group_audio_lock == 'no' and not is_muted(chat_id, msg_type..': yes') then
-    return '🔓 Audio Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Audio Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
   	if is_muted(chat_id, msg_type..': yes') then
 		unmute(chat_id, msg_type)
@@ -737,7 +737,7 @@ end
   end
   local group_photo_lock = data[tostring(target)]['settings']['lock_photo']
   if group_photo_lock == 'yes' and is_muted(chat_id, msg_type..': yes') then
-    return '🔐 Photo Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Photo Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     if not is_muted(chat_id, msg_type..': yes') then
 		mute(chat_id, msg_type)
@@ -756,7 +756,7 @@ local function unlock_group_photo(msg, data, target)
   end
   local group_photo_lock = data[tostring(target)]['settings']['lock_photo']
   if group_photo_lock == 'no' and not is_muted(chat_id, msg_type..': yes') then
-    return '🔓 Photo Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Photo Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
   	if is_muted(chat_id, msg_type..': yes') then
 		unmute(chat_id, msg_type)
@@ -775,7 +775,7 @@ end
   end
   local group_video_lock = data[tostring(target)]['settings']['lock_video']
   if group_video_lock == 'yes' and is_muted(chat_id, msg_type..': yes') then
-    return '🔐 Video Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Video Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     if not is_muted(chat_id, msg_type..': yes') then
 		mute(chat_id, msg_type)
@@ -794,7 +794,7 @@ local function unlock_group_video(msg, data, target)
   end
   local group_video_lock = data[tostring(target)]['settings']['lock_video']
   if group_video_lock == 'no' and not is_muted(chat_id, msg_type..': yes') then
-    return '🔓 Video Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Video Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
   	if is_muted(chat_id, msg_type..': yes') then
 		unmute(chat_id, msg_type)
@@ -813,7 +813,7 @@ end
   end
   local group_documents_lock = data[tostring(target)]['settings']['lock_documents']
   if group_documents_lock == 'yes' and is_muted(chat_id, msg_type..': yes') then
-    return '🔐 Documents Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Documents Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     if not is_muted(chat_id, msg_type..': yes') then
 		mute(chat_id, msg_type)
@@ -832,7 +832,7 @@ local function unlock_group_documents(msg, data, target)
   end
   local group_documents_lock = data[tostring(target)]['settings']['lock_documents']
   if group_documents_lock == 'no' and not is_muted(chat_id, msg_type..': yes') then
-    return '🔓 Documents Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Documents Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
   	if is_muted(chat_id, msg_type..': yes') then
 		unmute(chat_id, msg_type)
@@ -851,7 +851,7 @@ end
   end
   local group_text_lock = data[tostring(target)]['settings']['lock_text']
   if group_text_lock == 'yes' and is_muted(chat_id, msg_type..': yes') then
-    return '🔐 Text Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Text Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     if not is_muted(chat_id, msg_type..': yes') then
 		mute(chat_id, msg_type)
@@ -870,7 +870,7 @@ local function unlock_group_text(msg, data, target)
   end
   local group_text_lock = data[tostring(target)]['settings']['lock_text']
   if group_text_lock == 'no' and not is_muted(chat_id, msg_type..': yes') then
-    return '🔓 Text Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Text Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
   	if is_muted(chat_id, msg_type..': yes') then
 		unmute(chat_id, msg_type)
@@ -889,7 +889,7 @@ end
   end
   local group_all_lock = data[tostring(target)]['settings']['lock_all']
   if group_all_lock == 'yes' and is_muted(chat_id, msg_type..': yes') then
-    return '🔐 All Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 All Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     if not is_muted(chat_id, msg_type..': yes') then
 		mute(chat_id, msg_type)
@@ -908,7 +908,7 @@ local function unlock_group_all(msg, data, target)
   end
   local group_all_lock = data[tostring(target)]['settings']['lock_all']
   if group_all_lock == 'no' and not is_muted(chat_id, msg_type..': yes') then
-    return '🔓 All Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 All Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
   	if is_muted(chat_id, msg_type..': yes') then
 		unmute(chat_id, msg_type)
@@ -927,7 +927,7 @@ end
   end
   local group_gifs_lock = data[tostring(target)]['settings']['lock_gifs']
   if group_gifs_lock == 'yes' and is_muted(chat_id, msg_type..': yes') then
-    return '🔐 Gifs Posting Are Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Gifs Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     if not is_muted(chat_id, msg_type..': yes') then
 		mute(chat_id, msg_type)
@@ -946,7 +946,7 @@ local function unlock_group_gifs(msg, data, target)
   end
   local group_gifs_lock = data[tostring(target)]['settings']['lock_gifs']
   if group_gifs_lock == 'no' and not is_muted(chat_id, msg_type..': yes') then
-    return '🔓 Gifs Posting Are Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Gifs Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
   	if is_muted(chat_id, msg_type..': yes') then
 		unmute(chat_id, msg_type)
@@ -963,7 +963,7 @@ local function lock_group_inline(msg, data, target)
   end
   local group_inline_lock = data[tostring(target)]['settings']['lock_inline']
   if group_inline_lock == 'yes' then
-    return '🔐 Inline Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Inline Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['lock_inline'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -977,7 +977,7 @@ local function unlock_group_inline(msg, data, target)
   end
   local group_inline_lock = data[tostring(target)]['settings']['lock_inline']
   if group_inline_lock == 'no' then
-    return '🔓 Inline Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Inline Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_inline'] = 'no'
     save_data(_config.moderation.data, data)
@@ -991,7 +991,7 @@ local function lock_group_cmd(msg, data, target)
   end
   local group_cmd_lock = data[tostring(target)]['settings']['lock_cmd']
   if group_cmd_lock == 'yes' then
-    return '🔐 Cmd Posting Is Already Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
+    return '🔐 Cmd Posting Has Been Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔐'
   else
     data[tostring(target)]['settings']['lock_cmd'] = 'yes'
     save_data(_config.moderation.data, data)
@@ -1005,7 +1005,7 @@ local function unlock_group_cmd(msg, data, target)
   end
   local group_cmd_lock = data[tostring(target)]['settings']['lock_cmd']
   if group_cmd_lock == 'no' then
-    return '🔓 Cmd Posting Is Not Locked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
+    return '🔓 Cmd Posting Has Been UnLocked\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM 🔓'
   else
     data[tostring(target)]['settings']['lock_cmd'] = 'no'
     save_data(_config.moderation.data, data)
