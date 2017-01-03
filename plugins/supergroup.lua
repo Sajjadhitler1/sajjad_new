@@ -2075,7 +2075,7 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				text = "Full Name :\n》➣ " ..string.gsub(msg.from.print_name, "_", " ").. "\nUsername :\n》➣ @"..(msg.from.username or '----').."\nYour ID :\n》➣ "..msg.from.id.."\nYour Link :\n》➣ telegram.me/"..(msg.from.username or '').."\nSuperGroup Name :\n》➣ " ..string.gsub(msg.to.print_name, "_", " ").. "\nSuperGroup ID :\n》➣ "..msg.to.id
+				text = "Full Name :\n》➣ " ..string.gsub(msg.from.print_name, "_", " ").. "\nUsername :\n》➣ @"..(msg.from.username or '----').."\nYour ID :\n》➣ "..msg.from.id.."\nYour Link :\n》➣ Telegram.Me/"..(msg.from.username or '').."\nSuperGroup Name :\n》➣ " ..string.gsub(msg.to.print_name, "_", " ").. "\nSuperGroup ID :\n》➣ "..msg.to.id
 	reply_msg(msg.id, text, ok_cb, false)
 end
 		end
@@ -2769,7 +2769,7 @@ return {
     "^[#!/]([Bb]lock) (.*)",
 	"^[#!/]([Bb]lock)",
 	"^[#!/]([Tt]osuper)$",
-	"^[#!/]([Ii][Dd][from]) (.*)$",
+	"^[#!/]([Ii][Dd])$",
 	"^[#!/]([Ii][Dd]) (.*)$",
 	"^[#!/]([Kk]ickme)$",
 	"^[#!/]([Kk]ick) (.*)$",
