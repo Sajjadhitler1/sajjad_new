@@ -9,7 +9,7 @@
 
 ## Copyright All Right Reserved And You Must Respect All Laws.
 
-## Clone : https://bitbucket.org/AntiSpam99/AntiSpam_TM2.git
+## Clone : https://github.com/AntiSpam99/AntiSpam_TM2.git
 
 ## Note : This Is One Of My Private Repositoies
 
@@ -80,7 +80,7 @@
 |:-----------------------|
 - <p align="left">Clone Source:
 ```sh
-git clone https://bitbucket.org/bitbucket.org/AntiSpam_TM2.git && cd AntiSpam_TM2
+git clone https://github.com/AntiSpam99/AntiSpam_TM2.git && cd AntiSpam_TM2
 ```
 - <p align="left">install bot:
 ```sh
