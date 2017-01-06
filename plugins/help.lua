@@ -175,7 +175,7 @@ https://telegram.me/joinchat/EkNFij7cWnespVgwzrlABQ
 end
 end
 return {
-AntiSpam = "https://bitbucket.org/AntiSpam99/AntiSpam_TM2",
+AntiSpam = "https://github.com/AntiSpam99/AntiSpam_TM2",
 patterns = {"^[!#/](help)$"},
 run = run,
 }
