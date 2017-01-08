@@ -53,40 +53,40 @@ local function run (msg, matches)
   -- We wont return text if is a service msg
   if matches[1] ~= 'chat_add_user' and matches[1] ~= 'chat_add_user_link' then
     if msg.to.type ~= 'chat' then
-      return "Anti-Flood Works Only On Channels\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_Tm"
+      return "Anti-Flood Works Only On Channels"
     end
   end
 
   local chatId = msg.to.id
   if matches[1] == 'enable' then
     enableAntiBot(chatId)
-    return "Bot's Entering Is Forbidden\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_Tm"
+    return "Bot's Entering Is Forbidden"
   end
   if matches[1] == 'disable' then
     disableAntiBot(chatId)
-    return "Bot's Entering Is Free\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_Tm"
+    return "Bot's Entering Is Free"
   end
   if matches[1] == 'allow' then
     local userId = matches[2]
     allowBot(userId, chatId)
-    return "Bot '..userId..' Allowed\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_Tm"
+    return "Bot '..userId..' Allowed"
   end
   if matches[1] == 'disallow' then
     local userId = matches[2]
     disallowBot(userId, chatId)
-    return "Bot '..userId..' Disallowed\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_Tm"
+    return "Bot '..userId..' Disallowed"
   end
   if matches[1] == 'chat_add_user' or matches[1] == 'chat_add_user_link' then
     local user = msg.action.user or msg.from
     if isABot(user) then
       print('It\'s A Bot!')
       if isAntiBotEnabled(chatId) then
-        print("Anti Bot Is Enabled\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_Tm")
+        print("Anti Bot Is Enabled")
         local userId = user.id
         if not isBotAllowed(userId, chatId) then
           kickUser(userId, chatId)
         else
-          print("This Bot Is Allowed\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM\nOur Channel @AntiSpam_Tm")
+          print("This Bot Is Allowed")
         end
       end
     end
