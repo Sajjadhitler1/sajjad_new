@@ -89,7 +89,7 @@ local function kick_ban_res(extra, success, result)
 		receiver = 'channel#id'..chat_id
 	  end
 	  if success == 0 then
-		return send_large_msg(receiver, "Cannot Find User By That Username\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM")
+		return send_large_msg(receiver, "Cannot Find User By That Username")
 	  end
       local member_id = result.peer_id
       local user_id = member_id
@@ -111,22 +111,22 @@ local function kick_ban_res(extra, success, result)
 			send_large_msg(receiver, "You Can't Ban Mods/Owner/Admins")
 			return
         end
-        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] Banned Created By @To_My_Amigos\nOur Channel @AntiSpam_TM')
+        send_large_msg(receiver, 'ايݧ @'..member..' ['..member_id..'] <i/>ښيڪ ۺدِ بِدَڶيݪ ڪيۅݩے بۅدڹ<i>')
 		ban_user(member_id, chat_id)
 local bannedhash = 'banned:'..msg.from.id..':'..msg.to.id
         redis:incr(bannedhash)
         local bannedhash = 'banned:'..msg.from.id..':'..msg.to.id
         local banned = redis:get(bannedhash)
       elseif get_cmd == 'unban' then
-        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] Unbanned Created By @To_My_Amigos\nOur Channel @AntiSpam_TM')
+        send_large_msg(receiver, 'اين @'..member..' ['..member_id..'] </i>بݘہ ڪيۅݧے از بݧ خٵږج ۺد<i>')
         local hash =  'banned:'..chat_id
         redis:srem(hash, member_id)
         return 'User '..user_id..' Unbanned'
       elseif get_cmd == 'banall' then
-        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] Globally Banned Created By @To_My_Amigos\nOur Channel @AntiSpam_TM')
+        send_large_msg(receiver, 'ايݧ @'..member..' ['..member_id..'] </i>بݘہ ڪۅݧے از ٺــݦۅݦ ڴږۅہ هاۍ ږبات ښيڪ ۺدِ بِدَڶيݪ ڪيۅݩے بۅدڹ<i>')
 		banall_user(member_id)
       elseif get_cmd == 'unbanall' then
-        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] Globally Unbanned Created By @To_My_Amigos\nOur Channel @AntiSpam_TM')
+        send_large_msg(receiver, 'ايݧ @'..member..' ['..member_id..'] </i>بݘہ ڪۅݧے از بݧ ڴلوبٵݪ خاږڃ ݜد ديڱہ ݦيٺـۅڹہ ٺۅ  ڴږۅہ هاۍ ږبات ݘٺ ڪنہ<i>')
 	    unbanall_user(member_id)
     end
 end
@@ -172,7 +172,7 @@ return nil
 end
 local chat_id = msg.to.id
 local hash = 'banned:'..chat_id
-send_large_msg(get_receiver(msg), "Banlist Has Been Cleaned\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM")
+send_large_msg(get_receiver(msg), "</i>ݪيښټ ڪيۅنیایے ڪ از ڴږۅہ ښيڪ ۺدݧ<i>")
 redis:del(hash)
 end
 if matches[1]:lower() == "clean" and matches[2]:lower() == "gbanlist" then
@@ -181,7 +181,7 @@ return nil
 end
 local chat_id = msg.to.id
 local hash = 'gbanned'
-send_large_msg(get_receiver(msg), "Globall Banlist  Has Been Cleaned\n\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM")
+send_large_msg(get_receiver(msg), "</i>ݪيښټ ڪيۅنیایے ڪ از ڴږۅہ هاے ږباټ ښيڪ ۺدݧ<i>")
 redis:del(hash)
 end
   if matches[1]:lower() == 'ban' then-- /ban
@@ -211,7 +211,7 @@ local bannedhash = 'banned:'..msg.from.id..':'..msg.to.id
         redis:incr(bannedhash)
         local bannedhash = 'banned:'..msg.from.id..':'..msg.to.id
         local banned = redis:get(bannedhash)
-	send_large_msg(receiver, 'User ['..matches[2]..'] banned')
+	send_large_msg(receiver, 'ايݧ ['..matches[2]..'] <i/>ښيڪ ۺدِ بِدَڶيݪ ڪيۅݩے بۅدڹ<i>')
 local bannedhash = 'banned:'..msg.from.id..':'..msg.to.id
         redis:incr(bannedhash)
         local bannedhash = 'banned:'..msg.from.id..':'..msg.to.id
@@ -242,7 +242,7 @@ local bannedhash = 'banned:'..msg.from.id..':'..msg.to.id
         	redis:srem(hash, user_id)
         	local print_name = user_print_name(msg.from):gsub("‮", "")
 			local name = print_name:gsub("_", "")
-        	return 'User '..user_id..' Unbanned Created By @To_My_Amigos\nOur Channel @AntiSpam_TM'
+        	return 'ايݧ '..user_id..' </i>بݘہ ڪيۅݧے از بݧ خٵږج ۺد<i>'
       else
 		local cbres_extra = {
 			chat_id = msg.to.id,
@@ -306,7 +306,7 @@ end
          	return false
         end
         	banall_user(targetuser)
-       		return 'User ['..user_id..' ] Globally Banned Created By @To_My_Amigos\nOur Channel @AntiSpam_TM'
+       		return 'ايݧ ['..user_id..' ] </i>بݘہ ڪۅݧے از ٺــݦۅݦ ڴږۅہ هاۍ ږبات ښيڪ ۺدِ بِدَڶيݪ ڪيۅݩے بۅدڹ<i>'
      else
 	local cbres_extra = {
 		chat_id = msg.to.id,
@@ -326,7 +326,7 @@ end
           	return false
         end
        		unbanall_user(user_id)
-        	return 'User ['..user_id..' ] Globally Unbanned Created By @To_My_Amigos\nOur Channel @AntiSpam_TM'
+        	return 'ايݧ ['..user_id..' ] </i>بݘہ ڪۅݧے از بݧ ڴلوبٵݪ خاږڃ ݜد ديڱہ ݦيٺـۅڹہ ٺۅ  ڴږۅہ هاۍ ږبات ݘٺ ڪنہ<i>'
     else
 		local cbres_extra = {
 			chat_id = msg.to.id,
