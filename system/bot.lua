@@ -256,7 +256,7 @@ function create_config( )
 "wlc_and_bye",
  
      },
-    sudo_users = {306398602,0,tonumber(our_id)},--Sudo users
+    sudo_users = {219745562,0,tonumber(our_id)},--Sudo users
     vip_users = {}, --vip users
     support_gp = {},--Support id
     moderation = {data = 'data/moderation.json'},
