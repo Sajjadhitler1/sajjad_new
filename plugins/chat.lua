@@ -8,7 +8,7 @@ local function get_value(msg, var_name)
   local hash = get_variables_hash(msg)
   if hash then
     local value = redis:hget(hash, var_name)
-    if not value then
+    if not value then 
       return
     else
       return value
@@ -43,7 +43,7 @@ local function save_value(msg, name, value)
   end
   if hash then
     redis:hset(hash, name, value)
-    return name..'\n Saved\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM'
+    return name..'\n <i> ښيۅ ۺد </i>'
   end
 end
 local function del_value(msg, name)
@@ -56,7 +56,7 @@ local function del_value(msg, name)
   end
   if hash then
     redis:hdel(hash, name)
-    return name..'\nCleaned\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM'
+    return name..'\nCleaned'
   end
 end
 
@@ -68,7 +68,7 @@ local function delallchats(msg)
     for i=1, #names do
       redis:hdel(hash,names[i])
     end
-    return "All Saved Chats Have Been Cleaned\nCreated By @To_My_Amigos\nOur Channel @AntiSpam_TM"
+    return "<i/> ټݦۅݦ ݦټـݧ هاۍ ذخيږہ ۺدہ ݐاڪ ۺدݧ<i>"
 	else
 	return 
   end
